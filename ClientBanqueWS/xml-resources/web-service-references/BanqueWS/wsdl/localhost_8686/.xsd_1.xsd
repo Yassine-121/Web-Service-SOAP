@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://bws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://bws/">
+
+<xs:element name="ConversionEuroToDH" type="tns:ConversionEuroToDH"></xs:element>
+
+<xs:element name="ConversionEuroToDHResponse" type="tns:ConversionEuroToDHResponse"></xs:element>
+
+<xs:element name="compte" type="tns:compte"></xs:element>
+
+<xs:element name="getCompte" type="tns:getCompte"></xs:element>
+
+<xs:element name="getCompteResponse" type="tns:getCompteResponse"></xs:element>
+
+<xs:element name="listComptes" type="tns:listComptes"></xs:element>
+
+<xs:element name="listComptesResponse" type="tns:listComptesResponse"></xs:element>
+
+<xs:complexType name="getCompte">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compte">
+<xs:sequence>
+<xs:element name="solde" type="xs:double"></xs:element>
+</xs:sequence>
+<xs:attribute name="code" type="xs:int" use="required"></xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="listComptes">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listComptesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConversionEuroToDH">
+<xs:sequence>
+<xs:element name="arg0" type="xs:double"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConversionEuroToDHResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
